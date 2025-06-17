@@ -1,5 +1,5 @@
-# Project Name Hereerw
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
+# Voice Assistant with AI
+interesting stuffs
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
@@ -71,6 +71,9 @@ void loop() {
 
 }
 ```
+# Starter Project: [Jitterbug] (https://learntosolderkits.com/products/jitterbug/) 
+
+
 
 # Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
