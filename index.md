@@ -71,7 +71,7 @@ void loop() {
 
 }
 ```
-# Starter Project: [Jitterbug] (https://learntosolderkits.com/products/jitterbug/) 
+# Starter Project: [Jitterbug]([url] (https://learntosolderkits.com/products/jitterbug))
 
 
 
