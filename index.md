@@ -1,6 +1,8 @@
 # Voice Assistant with AI
 interesting stuffs
 
+<span style="background-color🫐">
+
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
@@ -53,6 +55,7 @@ For your first milestone, describe what your project is and how you plan to buil
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
 
+
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
@@ -71,7 +74,8 @@ void loop() {
 
 }
 ```
-# Starter Project: [Jitterbug]([url] (https://learntosolderkits.com/products/jitterbug))
+# Starter Project
+My starter project is a jitterbug, which has a battery which powers the LED lights that act as eyes and the vibration motor, which causes the legs made of metal wires to "jitter" and the entire jitterbug to move. 
 
 
 
