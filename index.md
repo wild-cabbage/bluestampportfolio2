@@ -101,8 +101,6 @@ After finishing the starter project and reviewing soldering, I will have started
 
 <!--- note: add picture of my own project if possible-->
 
-My starter project is a jitterbug, which has a battery which powers the LED lights that act as eyes and the vibration motor, which causes the legs made of metal wires to "jitter" and the entire jitterbug to move. 
-
 
 
 # Bill of Materials
