@@ -13,12 +13,16 @@
 |:--:|:--:|:--:|:--:|
 | Irene L | Stratford Preparatory Blackford | Engineering | Incoming 8th Grader
 
-<!---
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
-![Headstone Image](logo.svg)
+<!--- **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.** -->
 
--->
+
+
+<!--- ![Headstone Image](logo.svg) -->
+
+![Headshot](2025bluestampheadshotformat.png)
+
+
   
 # Final Milestone
 
