@@ -65,6 +65,12 @@ For your first milestone, describe what your project is and how you plan to buil
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project -->
 
+<!-- **ACTUAL**
+
+## Description
+
+My first milestone was to obtain the OpenAI API key and to set up the raspberry pi for the objective of using and interfacing with it as a "computer" 
+
 
 # Schematics 
 <!--- Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
