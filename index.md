@@ -65,18 +65,53 @@ For your first milestone, describe what your project is and how you plan to buil
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project -->
 
-<!-- **ACTUAL**
+
 
 ## Description
 
-My first milestone was to obtain the OpenAI API key and to set up the raspberry pi for the objective of using and interfacing with it as a "computer" 
+My first milestone was to obtain the OpenAI API key and to set up the raspberry pi to use and interface with it as a computer. I chose this project because it was very different from last year--more focused on software than hardware and using raspberry pi instead of Arduino--and because I wanted to learn about interacting with AI. Virtual Network Computing (VNC), Secure Shell (SSH), and Visual Studio Code (VS Code) were used to create a headless setup. I imaged the raspberry pi, renamed the it, created a host name to connect to it, used a rasperry pi camera (or pi camera) to take photos, and downloaded updates and upgrades into the terminals of Visual Studio Code and the raspberry pi.
+
+## Components and Software
+
+For hardware, I used the raspberry pi, a keyboard and mouse, an SD card, and an SD card reader. I downloaded a raspberry pi imager in order to image the SD card of the raspberry pi and create a host name that would later be used in Visual Studio Code to connect to the raspberry pi. For displays, I used OBS, which displays the raspberry pi screen and TigerVNC Viewer, which allows the computer's keyboard and trackpad to be used instead and allows use of the raspberry pi without plugging in the SD card reader to the computer. I downloaded Visual Studio Code to code in python as well as updates and upgrades into the terminal of VS Code. 
+
+### Images
+
+**Raspberry pi images**
+![raspberrypiimage](censoredimage.png)
+note: I did not have image to show this person's face, so I put a purple square over it.
+
+This is one of the only pictures that I took with the raspberry pi camera that showed up in the raspberry pi's folder.
+
+**Raspberry Pi setup**
+![raspberrypissetup](rasppisetup.png)
+
+## Challenges
+
+When I was first imaging the raspberry pi's SD card, I forgot that the imager only imaged the SD card, so I imaged it twice by accident. Halfway through the second time, I remembered that it was only supposed to image the SD card, and the imager seemed to be frozen at 100% in the verify stage. Upon pressing the "cancel" on the screen, I corrupted the SD card, and when I received a new SD card, I almost corrupted that one too because the imager was frozen at 100% verify from the start. After thirteen minutes of waiting, the imager finally finished imaging the second SD card, allowing me to take it out and use it. Visual Studio Code needed updating after I started it up for the second time after a few days, and that prevented me from filming my milestone video sooner. My raspberry pi camera was not working at first even after I plugged it in twice, and I only realized after plugging it in again that I had not plugged it in deep enough and that I had to push it a little more even with the possibility of it breaking.
 
 
-# Schematics 
-<!--- Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
+## Code
+---
+### Raspberry Pi Imager Code
 
-# Code
-<!--- Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
+``` python
+
+from picamera2 import Picamera2, Preview
+import time
+import cv2
+picam2 = Picamera2()
+camera_config = picam2.create_still_configuration(main={"size": (1920, 1080)},
+lores={"size": (640, 480)}, display="lores")
+picam2.configure(camera_config)
+#picam2.start_preview(Preview.QTGL) #Comment this out if not using desktop interface
+picam2.start()
+time.sleep(2)
+im = picam2.capture_array()
+im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
+cv2.imwrite('file.png', im)
+
+```
 
 <!--- ```c++
 void setup() {
