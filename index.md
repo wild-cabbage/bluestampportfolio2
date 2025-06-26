@@ -68,7 +68,6 @@ Additionally, the WiFi was problematic, especially after I filmed a part of my m
 My third milestone will be allowing my raspberry pi to obtain answers from AI using the OpenAI API key that I obtained for part of my  first milestone and give verbal messages of affirmation that it turned the light on and off. 
 
 ## Schematics
----
 
 ### Final Circuit Schematic
 ---
@@ -209,15 +208,14 @@ For hardware, I used the raspberry pi, a keyboard and mouse, an SD card, and an 
 
 ### Images
 
-**Raspberry pi images**
----
+Raspberry pi camera picture
+...
 ![raspberrypiimage](censoredimage.png)
 note: I did not have permission to show this person's face, so I put a purple square over it.
 
 This is one of the only pictures that I took with the raspberry pi camera that showed up in the raspberry pi's folder.
 
-**Raspberry Pi setup**
----
+Raspberry Pi setup
 ![raspberrypissetup](rasppisetup.png)
 
 ## Challenges
