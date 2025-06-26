@@ -131,7 +131,7 @@ time.sleep(2)
 im = picam2.capture_array()
 im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 cv2.imwrite('file.png', im)
-
+```
 ---
 # Starter Project
 ---
