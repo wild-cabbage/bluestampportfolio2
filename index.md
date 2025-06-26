@@ -209,13 +209,20 @@ For hardware, I used the raspberry pi, a keyboard and mouse, an SD card, and an 
 ### Images
 
 Raspberry pi camera picture
-...
+
+---
+
 ![raspberrypiimage](censoredimage.png)
 note: I did not have permission to show this person's face, so I put a purple square over it.
 
 This is one of the only pictures that I took with the raspberry pi camera that showed up in the raspberry pi's folder.
 
+---
+
 Raspberry Pi setup
+
+---
+
 ![raspberrypissetup](rasppisetup.png)
 
 ## Challenges
