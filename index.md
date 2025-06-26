@@ -59,11 +59,128 @@ My second milestone was to build the circuit and code the raspberry pi using pyt
 
 ## Challenges
 
+During this milestone, at first, the light was not turning on when I tested it with the entire code but did turn on when I tested it without the relay. Initially, I created another program that would only test the relay and the LED, but the light still did not turn on and off. I switched out the signal wire (IN1; orange in the picture) with another signal wire because that is the wire that is connected to GPIO pin 18 and that sends the signal to turn the LED on, yet that did not cause the LED to turn on and off. I checked my wiring, and there did not seem to be a problem with it, but I still tried writing both one and zero to figure out whether or not the schematic I was following switched NO and normally closed (NC). I switched out the relay, assuming that the relay had to be broken, and I was correct, but as I was running the program, I figured out that the schematic did in fact switch NO and NC, causing code that would technically turn the LED off to turn on and vice versa. 
+
+Additionally, the WiFi was problematic, especially after I filmed a part of my milestone video and returned. I could not ping my raspberry pi in terminal, so I intended to use OBS (a software that I use to change the WiFi on the raspberry pi because it does not use VNC or SSH) to check the WiFi network that my raspberry pi was on. However, OBS did not recognize my raspberry pi as a device when I plugged it in initially. Upon restarting OBS and plugging in my raspberry pi again, OBS was able to recognize my raspberry pi, and I was correct--the raspberry pi had connected to another network because I was too far from the router I had used when I was working. 
+
 ## Next Steps
 
+My third milestone will be allowing my raspberry pi to obtain answers from AI using the OpenAI API key that I obtained for part of my  first milestone and give verbal messages of affirmation that it turned the light on and off. 
+
 ## Schematics
+---
+
+### Final Circuit Schematic
+---
+![circuitschematic](smallerschematic.png)
 
 ## Code
+
+### Relay Testing Code
+``` python
+import lgpio # to indicate GPIO pin number
+from time import sleep # rest time
+
+RELAY_GPIO_PIN = 18 # setting up the relay gpio pin at 18 (orange wire)
+
+h = lgpio.gpiochip_open(4)
+
+lgpio.gpio_claim_output(h, RELAY_GPIO_PIN)
+
+
+
+lgpio.gpio_write(h, RELAY_GPIO_PIN, 1) # turn on
+sleep(1) #rest 1 sec
+lgpio.gpio_write(h, RELAY_GPIO_PIN, 0) # turn off
+#sleep(1)
+
+lgpio.gpiochip_close(h) #close & clean up
+print("GPIO cleanup completed")
+```
+
+### Code for Turning LEDs on and off
+
+```python
+
+# importing the downloaded dependencies
+import lgpio
+import speech_recognition as sr # will be referred to as "sr" 
+import pyttsx3 # text-to-speech conversion library
+import openai
+
+# Initializing pyttsx3
+listening = True #means that it's listening
+engine = pyttsx3.init() # setting up engine
+
+# Set your openai api key and customize the chatgpt role
+openai.api_key = "" #deleted key because others can access my OpenAI API key and use it if I keep it there
+messages = [{"role": "system", "content": "Your name is Tom and give answers in 2 lines"}] #expectations/format
+
+# Customizing the output voice: getting voices, rate, and volume
+voices = engine.getProperty('voices') 
+rate = engine.getProperty('rate')
+volume = engine.getProperty('volume')
+
+
+RELAY_GPIO_PIN = 18 # define relay GPIO pin #
+
+h = lgpio.gpiochip_open(4) # initializing GPIO
+
+lgpio.gpio_claim_output(h, RELAY_GPIO_PIN) #setting up GPIO as OUTPUT
+
+def get_response(user_input):
+    messages.append({"role": "user", "content": user_input}) # parameter "user_input" because it needs user input to give  a response
+    response = openai.ChatCompletion.create( #getting the answer for the response
+        model="gpt-3.5-turbo", #telling which model
+        messages=messages
+    )
+    ChatGPT_reply = response["choices"][0]["message"]["content"] #format for giving answers
+    messages.append({"role": "assistant", "content": ChatGPT_reply}) #also format
+    return ChatGPT_reply # the thing that the function gives back
+
+def turn_on_light():
+    lgpio.gpio_write(h, RELAY_GPIO_PIN, 1) # makes RELAY_GPIO_PIN (18) 1, or HIGH (on)
+    print("Light turned ON") # printing message of affirmation
+
+def turn_off_light():
+    lgpio.gpio_write(h, RELAY_GPIO_PIN, 0) # makes RELAY_GPIO_PIN (18) 0, or LOW (off)
+    print("Light turned OFF") #printing message of affirmation
+
+
+while listening: #listening was turned ON at the start of program
+    with sr.Microphone() as source: #it listens from microphone & transcribes
+        recognizer = sr.Recognizer() #recognizing the words
+        recognizer.adjust_for_ambient_noise(source) #prevent ambient noise from clouding out the said words
+        recognizer.dynamic_energy_threshold = 3000 #adjustment mechanism to detect speech
+
+        try:
+            print("Listening...") #response
+            audio = recognizer.listen(source, timeout=5.0) #putting a timeout for the audio
+            response = recognizer.recognize_google(audio) # response
+            print(response) #printing the response
+            
+            if "turn on the light" in response.lower(): # if it hears "turn on the light"
+                turn_on_light()            
+
+            elif "turn off the light" in response.lower(): # if it hears "turn off the light"
+                turn_off_light()
+                
+            else:
+                print("Didn't recognize 'turn on the light' or 'turn off the light'.")
+
+                engine.say("did not recognize")
+
+               # if engine.isBusy(): (these two lines were to check that the speaker was trying to say something)
+                  # print("working")
+
+        except sr.UnknownValueError:
+            print("Didn't recognize anything.")
+
+
+# Clean up GPIO on exit
+lgpio.gpiochip_close(h)
+print("GPIO cleanup completed")
+```
 
 ---
 # First Milestone
