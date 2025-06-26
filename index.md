@@ -55,7 +55,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 My second milestone was to build the circuit and code the raspberry pi using python so that it could recognize words and follow commands to turn a light on and off. By using a relay, an electrically powered switch that uses an electromagnet to physically move a switch, I was able to turn the LED on and off. The signal wire (orange in the  picture) is connected to GPIO pin 18, the ground wire (white/gray in the picture) is connected to ground, and the voltage wire (green in the picture) is connected to 5V power. The positive side (+ve; blue wire in the picture) is connected to normally opened (NO) in the relay, and the ground is connected to common terminal (COM). The python code uses this information and writes one (on) or zero (off) to GPIO pin 18, which is where the signal wire is connected. 
 
-![fullcircuitsetup](circuitsetup.png)
+![fullcircuitsetup](finalsetup.png)
 
 ## Challenges
 
@@ -72,7 +72,7 @@ My third milestone will be allowing my raspberry pi to obtain answers from AI us
 
 ### Final Circuit Schematic
 ---
-![circuitschematic](smallerschematic.png)
+![circuitschematic](schematicc.png)
 
 ## Code
 
