@@ -37,7 +37,133 @@ For your final milestone, explain the outcome of your project. Key details to in
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE -->
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9ElZHwI5Rrc?si=uWFZoYUpQ--ypO_Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+## Description
+
+For my third milestone, I added a speaker to my project and added to my program, using the dependency pyttsx3 (referred to as "engine" in the code) to respond to a question, statement, or command. If the raspberry pi detects the word "Tom", it starts to search up the question or statement on OpenAI through the API key that was stated at the beginning of the code and shares OpenAI's response. When the light is turned on or off by one's voice command, it will affirm that the light has been turned on or off if the light has been successfully turned on or off. I set up Tom's voice as well as some properties of it. 
+
+## Challenges
+
+The main challenge at this steps was that my speaker was not outputting any sound at first, so I assumed that the code was wrong. However, I tried just running the function ```pyttsx3.say("hi")```, and it was still not working. I created the following test code to see if the speaker was actually attempting to say something but I just could not hear, and it always printed "working" in the terminal. 
+
+  ```python
+  if engine.isBusy(): #these two lines were to check that the speaker was trying to say something
+    print("working")
+```
+I started thinking that it was less of the program's problem and more of the speaker's problem, so I plugged the speaker into my computer. It was playing music well, so I decided to plug it in again, and I discovered that while it was not silent, it was not loud enough to hear the words particularly well even at its highest volume. I decided to replace my speaker with a louder speaker so that I could hear the words that Tom says more clearly.
+
+## Next Steps
+
+Next, I will be starting on my modifications, which are attaching a servo to act as a door, sharing news, playing music, and always saying 'Tom' for the voice assistant to respond instead of only to prompt OpenAI. 
+
+<!--- edit this later as needed --> 
+
+## Progress at Bluestamp
+
+At Bluestamp, I learned more about how breadboards work and about choosing a particular resistor using Ohm's law, V = I*R, as well as how to code a raspberry pi and configure the terminals on Mac and on SSH to figure out the. My greatest triumphs were figuring out the WiFi problems that came each time I went to a different place because I could sometimes reach myself but could not connect to SSH or I could not reach myself in any way despite being on the same WiFi network. Most of the time, I had to reconnect WiFi and then try, but a few times that did not work either because the WiFi network that I used was no longer in range or had been turned off and the raspberry pi defaulted to the school network. There were several modems of the same WiFi, and my raspberry pi kept connecting to a different modem than my computer did, so I switched to a classroom-specific WiFi that had been set up for the purpose of using raspberry pis. After Bluestamp, I would like to learn more about breadboards and circuits, and I would like to build onto my newly formed knowledge of coding a raspberry pi in python. 
+
+## Code
+
+```python
+
+# importing the downloaded dependencies
+import lgpio
+import speech_recognition as sr # will be referred to as "sr" 
+import pyttsx3 # text-to-speech conversion library
+import openai
+
+# Initializing pyttsx3
+listening = True #means that it's listening
+engine = pyttsx3.init() # setting up engine
+
+# Set your openai api key and customize the chatgpt role
+openai.api_key = "" # API keys are supposed to be private
+messages = [{"role": "system", "content": "Your name is Tom and give answers in 2 lines"}] #expectations/format
+
+# Customizing the output voice: getting voices, rate, and volume
+voices = engine.getProperty('voices') 
+rate = engine.getProperty('rate')
+volume = engine.getProperty('volume')
+
+engine.setProperty('rate', 120) # talk at 120 words per minute
+engine.setProperty('volume', volume) #setting up volume
+engine.setProperty('voice', 'british') #setting up the voice
+
+
+RELAY_GPIO_PIN = 18 # define relay GPIO pin #
+
+h = lgpio.gpiochip_open(4) # initializing GPIO
+
+lgpio.gpio_claim_output(h, RELAY_GPIO_PIN) #setting up GPIO as OUTPUT
+
+def get_response(user_input):
+    messages.append({"role": "user", "content": user_input}) # parameter "user_input" because it needs user input to give  a response
+    response = openai.ChatCompletion.create( #getting the answer for the response
+        model="gpt-3.5-turbo", #telling which model
+        messages=messages
+    )
+    ChatGPT_reply = response["choices"][0]["message"]["content"] #format for giving answers
+    messages.append({"role": "assistant", "content": ChatGPT_reply}) #also format
+    return ChatGPT_reply # the thing that the function gives back
+
+def turn_on_light():
+    lgpio.gpio_write(h, RELAY_GPIO_PIN, 1) # makes RELAY_GPIO_PIN (18) 1, or HIGH (on)
+    print("Light turned ON") # printing message of affirmation
+    engine.say("Light turned on") # saying the message
+    engine.runAndWait()
+
+def turn_off_light():
+    lgpio.gpio_write(h, RELAY_GPIO_PIN, 0) # makes RELAY_GPIO_PIN (18) 0, or LOW (off)
+    print("Light turned OFF") #printing message of affirmation
+    engine.say("Light turned off") # saying the message
+    engine.runAndWait()
+
+
+while listening: #listening was turned ON at the start of program
+    with sr.Microphone() as source: #it listens from microphone & transcribes
+        recognizer = sr.Recognizer() #recognizing the words
+        recognizer.adjust_for_ambient_noise(source) #prevent ambient noise from clouding out the said words
+        recognizer.dynamic_energy_threshold = 3000 #adjustment mechanism to detect speech
+
+        try:
+            print("Listening...") #response
+            audio = recognizer.listen(source, timeout=5.0) #putting a timeout for the audio
+            response = recognizer.recognize_google(audio) # response
+            print(response) #printing the response
+
+            if "tom" in response.lower(): #THIS causes it to use the API key and ask AI for the answer        
+                response_from_openai = get_response(response) #get the response
+                engine.setProperty('rate', 120) # talk at 120 words per minute
+                engine.setProperty('volume', volume) #setting up volume
+                engine.setProperty('voice', 'british') #setting up the voice
+                engine.say(response_from_openai) # say the response from openai
+                engine.runAndWait() # run this and wait
+            
+            elif "turn on the light" in response.lower():
+                turn_on_light()     
+
+            elif "turn off the light" in response.lower():
+                turn_off_light() 
+                print("Light turned off")
+                engine.say("Light turned off.")
+                
+            else:
+                print("Didn't recognize 'turn on the light' or 'turn off the light'.")
+
+                engine.say("did not recognize")
+
+               # if engine.isBusy(): (these two lines were to check that the speaker was trying to say something)
+                  # print("working")
+
+        except sr.UnknownValueError:
+            print("Didn't recognize anything.")
+
+
+# Clean up GPIO on exit
+lgpio.gpiochip_close(h)
+print("GPIO cleanup completed")
+```
 
 # Second Milestone
 
