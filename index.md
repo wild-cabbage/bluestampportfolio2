@@ -134,6 +134,7 @@ note: I did not have permission to show this person's face, so I put a purple sq
 ![raspberrypiimage](censoredimage.png)
 
 <br>
+
 **Fig 1**: this is an image that I took with the raspberry pi camera
 
 <br>
@@ -142,6 +143,7 @@ note: I did not have permission to show this person's face, so I put a purple sq
 ![raspberrypissetup](rasppisetup.png)
 
 <br>
+
 **Fig 2**: raspberry pi setup with the raspberry pi camera
 
 ## Challenges
