@@ -9,6 +9,8 @@
 <!--- This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
 
+This voice assistant, dubbed Tom, serves uncertainty and assists with tasks such as turning off the lights. He answers intrusive questions with humor and entertainment through OpenAI and responds to words and statements that people make, which is similar to Siri or Alexa. 
+
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Irene L | Stratford Preparatory Blackford | Engineering | Incoming 8th Grader
@@ -424,14 +426,20 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| CanaKit Raspberry Pi 4 Starter Kit | $99.95 | <a href="https://www.canakit.com/raspberry-pi-4-starter-kit.html?srsltid=AfmBOoplo-24tOUwhJMTwgXgCyijmcd7C5zVU6w0b_UMkb5S2RmnGfCK"> Link </a> |
+| Speaker | to output the sound | $13.98 | <a href="https://www.amazon.com/dp/B0CJJKF2Q2/ref=sspa_dk_detail_0?pd_rd_i=B0CJJKF2Q2&pd_rd_w=LBb0I&content-id=amzn1.sym.386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_p=386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_r=DFMF2MAPCGDV5KTYS0JA&pd_rd_wg=Jg8Ie&pd_rd_r=e676099d-1ee0-44bc-8a05-6aac8ad6ab06&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1"> Link </a> |
+| Microphone | To input the noise | $6.96 | <a href="https://www.amazon.com/Wisoqu-Microphone-Cancelling-Ultracompact-Compatible/dp/B0DGQTHKCT"> Link </a> |
+| Breadboard | For the circuit | $6.48 | <a href="https://www.amazon.com/DEYUE-breadboard-Set-Prototype-Board/dp/B07LFD4LT6/ref=sr_1_1_sspa?crid=WKDWMC95XWLT&dib=eyJ2IjoiMSJ9.5Z5yTwL-oa1r18Ah_zf9OXg0u1AVX54R3VfgSdqpBoQF-pb3vaYF9fEFc-CfIOeneZTl6n9i6Kw0I-CHleppmKaZjmKyijtZyQNKDc1qYFC4PZnxZrFe9_A6Z0Hc2-yRuFgv7WaQqJ9gYxs0iapxXK7ZjXygZ093Tbswo4BFD9Yxuyth4OJJ-FUa9mhwjIDf3tzhrGA7EYt5CiJzN82OXhhtoak0EvpRDSLvh3Pzfv0.M-LPZ9BDvq5_OXeVN6XIWQaL9Q7DvgemN27y5I34rGQ&dib_tag=se&keywords=breadboard&qid=1751062342&sprefix=breadboar%2Caps%2C185&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"> Link </a> |
+| Wires (male-male, female-male, female-female) | To build the circuit | $7.39 | <a href="https://www.amazon.com/ZYAMY-120PCS-Connector-Multicolor-Breadboard/dp/B0742RS6YL"> Link <a> |
+| Yellow LED | To light up and act as the light | $5.69 for 100 | <a href="https://www.amazon.com/GFORTUN-Emitting-Diffused-Electronic-Indicator/dp/B08D3SYH87/ref=sr_1_3?crid=1W67RSGLPCVJV&dib=eyJ2IjoiMSJ9.bLvzpb5Fds2c7h3EaTFvnTBDhtp3wAa_9eQs5Y_GYz78H_r9_wNGmVSAFHKYWRsj-_SKsw20bMxYov-uRntaZqvjY5g8Qo9mvyDtOrUXPKsRsFzxfw_K5CMDgnn7xkbH0Kfve5mNP593Sd9jDQdZ0lf48A0I4KTB-rCPBdwI_9sp6QLbO8CDOl-tXi6a-pHjM7aU7usEv7K8ZyVwcIHRyBZhAFg64-oxR33XPcjXW2DvDx7lG05_nsoHLcMnsfCvM44dlxkNWGi7xyGQ9krIfTtVBsomGySj2nAtxnjLbjE.fYPqHWFqdMaCmiCp_kW-1JTa-uCYNQSLbEOAA7BZ9gE&dib_tag=se&keywords=yellow%2Bpin%2BlED&qid=1751062472&s=industrial&sprefix=yellow%2Bpin%2Bled%2Cindustrial%2C158&sr=1-3&th=1"> Link <a> |
+| 220 ohm resistor | To regulate electric flow | $0.10 | <a href="https://www.addicore.com/products/220-ohm-1-4w-precision-resistor"> Link </a> |
+
+
 
 # Other Resources/Examples
 <!--- One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components. -->
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
+- [Example 1](https://pyttsx3.readthedocs.io/en/latest/)
+- [Example 2](https://learntosolderkits.com/pages/instructions)
+- [Example 3](https://sites.google.com/bluestampengineering.com/2025projectbook/level-200)
 
 To watch the BSE tutorial on how to create a portfolio, click here.
