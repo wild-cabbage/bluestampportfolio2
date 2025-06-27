@@ -426,7 +426,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| CanaKit Raspberry Pi 4 Starter Kit | $99.95 | <a href="https://www.canakit.com/raspberry-pi-4-starter-kit.html?srsltid=AfmBOoplo-24tOUwhJMTwgXgCyijmcd7C5zVU6w0b_UMkb5S2RmnGfCK"> Link </a> |
+| CanaKit Raspberry Pi 4 Starter Kit | For the raspberry pi and other components |$99.95 | <a href="https://www.canakit.com/raspberry-pi-4-starter-kit.html?srsltid=AfmBOoplo-24tOUwhJMTwgXgCyijmcd7C5zVU6w0b_UMkb5S2RmnGfCK"> Link </a> |
 | Speaker | to output the sound | $13.98 | <a href="https://www.amazon.com/dp/B0CJJKF2Q2/ref=sspa_dk_detail_0?pd_rd_i=B0CJJKF2Q2&pd_rd_w=LBb0I&content-id=amzn1.sym.386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_p=386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_r=DFMF2MAPCGDV5KTYS0JA&pd_rd_wg=Jg8Ie&pd_rd_r=e676099d-1ee0-44bc-8a05-6aac8ad6ab06&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1"> Link </a> |
 | Microphone | To input the noise | $6.96 | <a href="https://www.amazon.com/Wisoqu-Microphone-Cancelling-Ultracompact-Compatible/dp/B0DGQTHKCT"> Link </a> |
 | Breadboard | For the circuit | $6.48 | <a href="https://www.amazon.com/DEYUE-breadboard-Set-Prototype-Board/dp/B07LFD4LT6/ref=sr_1_1_sspa?crid=WKDWMC95XWLT&dib=eyJ2IjoiMSJ9.5Z5yTwL-oa1r18Ah_zf9OXg0u1AVX54R3VfgSdqpBoQF-pb3vaYF9fEFc-CfIOeneZTl6n9i6Kw0I-CHleppmKaZjmKyijtZyQNKDc1qYFC4PZnxZrFe9_A6Z0Hc2-yRuFgv7WaQqJ9gYxs0iapxXK7ZjXygZ093Tbswo4BFD9Yxuyth4OJJ-FUa9mhwjIDf3tzhrGA7EYt5CiJzN82OXhhtoak0EvpRDSLvh3Pzfv0.M-LPZ9BDvq5_OXeVN6XIWQaL9Q7DvgemN27y5I34rGQ&dib_tag=se&keywords=breadboard&qid=1751062342&sprefix=breadboar%2Caps%2C185&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"> Link </a> |
