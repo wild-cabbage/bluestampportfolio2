@@ -21,7 +21,9 @@ This voice assistant, dubbed Tom, serves uncertainty and assists with tasks such
 
 ---
 
-At Bluestamp, I learned more about how breadboards work and about choosing a particular resistor using Ohm's law, V = I*R, as well as how to code a raspberry pi and configure the terminals on Mac and on SSH. My greatest triumphs were figuring out the WiFi problems that came each time I went to a different place because I could sometimes reach myself but could not connect to SSH or I could not reach myself in any way despite being on the same WiFi network. Most of the time, I had to reconnect WiFi and then try, but a few times that did not work either because the WiFi network that I used was no longer in range or had been turned off and the raspberry pi defaulted to the school network. The most formidable challenge was also related to the WiFi problems, especially surrounding how the school WiFi had several modems of the same WiFi, and my computer connected to a different modem than the raspberry pi did, so a WiFi with only one router was set up, and I used that one. 
+At Bluestamp, I learned more about how breadboards work and about choosing a particular resistor using Ohm's law, V = I*R, as well as how to code a raspberry pi and configure the terminals on Mac and on SSH. 
+
+My greatest triumphs were figuring out the WiFi problems that came each time I went to a different place because I could sometimes reach myself but could not connect to SSH or I could not reach myself in any way despite being on the same WiFi network. Most of the time, I had to reconnect WiFi and then try, but a few times that did not work either because the WiFi network that I used was no longer in range or had been turned off and the raspberry pi defaulted to the school network. The most formidable challenge was also related to the WiFi problems, especially surrounding how the school WiFi had several modems of the same WiFi, and my computer connected to a different modem than the raspberry pi did, so a WiFi with only one router was set up, and I used that one. 
 
 After Bluestamp, I would like to learn more about breadboards and circuits, and I would like to build onto my newly formed knowledge of coding a raspberry pi in python. I would like to thank Vrinda, Ben, Kevin, and Sophia for their assistance during my project. 
 
@@ -84,7 +86,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 ---
 
-For my third milestone, I added a speaker to my project and added to my program, using the dependency pyttsx3 (referred to as "engine" in the code) to respond to a question, statement, or command (reference appendix [Milestone 3 Code](###Milestone-3-Code)). If the raspberry pi detects the word "Tom", it starts to search up the question or statement on OpenAI through the API key that was stated at the beginning of the code and shares OpenAI's response. When the light is turned on or off by one's voice command, it will affirm that the light has been turned on or off if the light has been successfully turned on or off. I set up Tom's voice as well as some properties of it such as volume, accent or voice in general, and rate at which it speaks. 
+For my third milestone, I added a speaker to my project and added to my program, using the dependency pyttsx3 (referred to as "engine" in the code) to respond to a question, statement, or command (reference appendix [Milestone 3 Code](###Milestone-3-Code)). Like before, if one says "turn on the light" or "turn off the light", the light will either turn on or off (coresponding to the command given). If the raspberry pi detects the word "Tom", it starts to search up the question or statement on OpenAI through the API key that was stated at the beginning of the code and shares OpenAI's response. When the light is turned on or off by one's voice command, it will affirm that the light has been turned on or off if the light has been successfully turned on or off by saying "light turned on" or "light turned off". I set up Tom's voice as well as some properties of it such as volume, accent or voice in general, and rate at which it speaks. 
 
 ## Challenges
 
@@ -128,7 +130,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 ---
 
-My second milestone was to build the circuit (reference appendix [Schematic](###Schematic-(milestone-2)))and code the raspberry pi using python so that it could recognize words and follow commands to turn a light on and off (reference appendix [Milestone 2 Code](###milestone-2-code)). By using a relay, an electrically powered switch that uses an electromagnet to physically move a switch, I was able to turn the LED on and off. The signal wire (orange in the  picture) is connected to GPIO pin 18, the ground wire (white/gray in the picture) is connected to ground, and the voltage wire (green in the picture) is connected to 5V power. The positive side (+ve; blue wire in the picture) is connected to normally opened (NO) in the relay, and the ground is connected to common terminal (COM). The python code uses this information and writes one (on) or zero (off) to GPIO pin 18, which is where the signal wire is connected. To compile the code without an excess of "error messages" that are not actually errors, I use ```python python [file name].py 2>/dev/null```. The first part runs the code, and "2>/dev/null" moves the error messages to a diffrent place that is not the terminal. 
+My second milestone was to build the circuit (reference appendix [Schematic](###Schematic-(milestone-2))) and code the raspberry pi using python so that it could recognize words and follow commands to turn a light on and off (reference appendix [Milestone 2 Code](###milestone-2-code)). By using a relay, an electrically powered switch that uses an electromagnet to physically move a switch, I was able to turn the LED on and off. The signal wire (orange in the  picture) is connected to GPIO pin 18, the ground wire (white/gray in the picture) is connected to ground, and the voltage wire (green in the picture) is connected to 5V power. The positive side (+ve; blue wire in the picture) is connected to normally opened (NO) in the relay, and the ground is connected to common terminal (COM). The python code uses this information and writes one (on) or zero (off) to GPIO pin 18, which is where the signal wire is connected. To compile the code without an excess of "error messages" that are not actually errors, I use ```python python [file name].py 2>/dev/null```. The first part runs the code, and "2>/dev/null" moves the error messages to a diffrent place that is not the terminal. 
 
 ![fullcircuitsetup](finalsetup.png)
 <br>
@@ -186,14 +188,14 @@ For hardware, I used the raspberry pi, a keyboard and mouse, an SD card, and an 
 note: I did not have permission to show this person's face, so I put a purple square over it.
 
 ![raspberrypiimage](censoredimage.png)
-**Fig 1**: this is an image that I took with the raspberry pi camera
+**Fig 2**: this is an image that I took with the raspberry pi camera
 
 <br>
 
 
 ![raspberrypissetup](rasppisetup.png)
 <br>
-**Fig 2**: raspberry pi setup with the raspberry pi camera
+**Fig 3**: raspberry pi setup with the raspberry pi camera
 
 ## Challenges
 
@@ -217,12 +219,13 @@ I will be starting on my second milestone, which allows one to interact with the
 
 ---
 
-I chose my starter project to be a jitterbug, which entailed soldering several parts onto the board because I had done the RGB slider the previous year and thought that this project would be a decent balance between difficulty (e.g. soldering and applications of soldering) and time consumption. The main components were the board, which was shaped like a bug, metal wire as the "legs" of the jitterbug, two red LEDs as the eyes, a switch, and a vibration motor, which causes the entire jitterbug to vibrate, or "jitter". The 5V nickel battery powers the LEDs and the vibration motor when the switch is turned on or flicked to the right.
-
 ![jitterbug](smalljitterbugpic.png)
 
-**Fig 1:** an image of the jitterbug*
+**Fig 4:** an image of the jitterbug*
  
+
+I chose my starter project to be a jitterbug, which entailed soldering several parts onto the board because I had done the RGB slider the previous year and thought that this project would be a decent balance between difficulty (e.g. soldering and applications of soldering) and time consumption. The main components were the board, which was shaped like a bug, metal wire as the "legs" of the jitterbug, two red LEDs as the eyes, a switch, and a vibration motor, which causes the entire jitterbug to vibrate, or "jitter". The 5V nickel battery powers the LEDs and the vibration motor when the switch is turned on or flicked to the right.
+
 ## Challenges
 
 ---
@@ -244,7 +247,9 @@ After finishing the starter project and reviewing soldering, I will have started
 ---
 
 ### Schematic (milestone 2)
-![circuit](schematicc.png)
+<img src="schematicbetterrendering.png" alt="Original Schematic" width = "800" height = "800">
+<br>
+Fig 5: the schematic for the circuit with an LED, a 220 ohm resistor, a relay, and a raspberry pi
 
 ---
 
@@ -583,7 +588,7 @@ print("GPIO cleanup completed")
 
 **Raspberry pi GPIO pin diagram**
 <img src="raspberrypigpiopindiagram.png" alt="Raspberry pi GPIO pin diagram" width = "870.88" height = "500">
-<p align="center">Fig 1: shows the GPIO pin diagram--signal wires go into the GPIO pins; voltage wires go into the 5V or 3.3V pins; ground wires go into the ground pins</p>
+<p align="center">Fig 6: shows the GPIO pin diagram--signal wires go into the GPIO pins; voltage wires go into the 5V or 3.3V pins; ground wires go into the ground pins</p>
 
 ---
 
@@ -592,7 +597,7 @@ image source: https://learn.sparkfun.com/tutorials/introduction-to-the-raspberry
 **Breadboard connection diagram**
 
 <img src="breadboardconnection.png" alt="Breadboard connection diagram" width="816" height = "300">
-<p align = center"> Fig 2: shows the breadboard rows or columns that are connected; the sides are ground and power rails</p>
+<p align = center"> Fig 7: shows the breadboard rows or columns that are connected; the sides are ground and power rails</p>
 
 ---
 
@@ -620,10 +625,10 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Servo | To act as a door | $6.99 for 3 | <a href="https://www.amazon.com/WWZMDiB-SG90-Control-Servos-Arduino/dp/B0BKPL2Y21/ref=sr_1_2_sspa?crid=HJSY3X06MTGE&dib=eyJ2IjoiMSJ9.0h1Mppk0fZ01In-hB99ublTEvDCkMLf9fczkT8tcjS5KWPv1eOuAzkjG8q238K4QftxeJOCivqCbHQ4w4xel8QwIBsfVqVYaAQte8TrBokQWh17xwcOs63gdyjHDmHX4tdG7JhO_EpaeGy9q6TzuAlzv1rbrSfYUK7daV35uK7jbwoVH8tkZ5TtUpENNLGETtkw_TwUS4DrKZ2LUecHArR7X23J8wnsx0ARYElJRn6Zrc2sXOGc-v3Kr_fjutmfoYd9SfD-KlYm-qTjD-bbrsxHe1iHMa2GH7mL-CwlBc3o.1cJJ-6OBQWUGNFMDWWZW_vl6_8EMKdkjOgNyUbvn8Oc&dib_tag=se&keywords=servo&qid=1751557689&sprefix=serv%2Caps%2C408&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"> Link </a> |
 
 
-# Other Resources/Examples
+<!--- # Other Resources/Examples
 <!--- One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components. -->
 - [Example 1](https://pyttsx3.readthedocs.io/en/latest/)
 - [Example 2](https://learntosolderkits.com/pages/instructions)
 - [Example 3](https://sites.google.com/bluestampengineering.com/2025projectbook/level-200)
 
-To watch the BSE tutorial on how to create a portfolio, click here.
+To watch the BSE tutorial on how to create a portfolio, click here. --> 
