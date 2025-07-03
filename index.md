@@ -632,6 +632,4 @@ One of the best parts about Github is that you can view how other people set up 
 - [Example 2](https://learntosolderkits.com/pages/instructions)
 - [Example 3](https://sites.google.com/bluestampengineering.com/2025projectbook/level-200)
 
-To watch the BSE tutorial on how to create a portfolio, click here.
-
--->
+To watch the BSE tutorial on how to create a portfolio, click here -->
