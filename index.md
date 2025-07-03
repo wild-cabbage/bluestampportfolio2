@@ -15,6 +15,36 @@ This voice assistant, dubbed Tom, serves uncertainty and assists with tasks such
 
 ![Headshot](2025bluestampheadshotformat.png)
 
+# Modifications
+
+## Modification 1
+---
+
+### Description
+
+My first modification was to put all commands including "turn on the light" and "turn off the light" under Tom so that it feels less invasive, and the voice assistant does not seem like it is constantly listening. Since I put "turn on the light" and "turn off the light" under Tom, when the voice assistant was supposed to connect to OpenAI, I added another keyword in addition to "Tom"--"question"--to clarify that it is not turning the light on or off (reference [Modification 1 Code](###Modification-1-code)). 
+
+```python
+if "tom question" in response.lower(): #THIS causes it to use the API key and ask AI for the answer        
+    response_from_openai = get_response(response) #get the response
+    engine.setProperty('rate', 120) # talk at 120 words per minute
+    engine.setProperty('volume', volume) #setting up volume
+    engine.setProperty('voice', 'british') #setting up the voice
+    engine.say(response_from_openai) # say the response from openai
+    engine.runAndWait() # run this and wait
+            
+elif "tom turn on the light" in response.lower():
+    turn_on_light()
+
+elif "tom turn off the light" in response.lower():
+    turn_off_light() 
+```
+
+Before, instead of "Tom, question" for the voice assistant to connect with OpenAI, the command was just "Tom", and the commands to open and close the lights did not include the word "Tom". 
+
+### Next Steps
+
+Next, I will be starting on another modification--allowing the voice assistant to move a servo to "open the door" or "close the door". 
 
   
 # Final Milestone
@@ -398,6 +428,114 @@ while listening: #listening was turned ON at the start of program
 
         except sr.UnknownValueError:
             print("Didn't recognize anything.")
+
+
+# Clean up GPIO on exit
+lgpio.gpiochip_close(h)
+print("GPIO cleanup completed")
+```
+
+### Modification 1 Code
+
+```python
+# importing the downloaded dependencies
+print("starting program")
+import pigpio
+import lgpio
+
+import speech_recognition as sr # will be referred to as "sr" 
+import pyttsx3 # text-to-speech conversion library
+import openai
+
+import time 
+
+
+# Initializing pyttsx3
+listening = True #means that it's listening
+engine = pyttsx3.init() # setting up engine
+
+
+# Set your openai api key and customize the chatgpt role
+openai.api_key = "" # insert OpenAI API key here
+messages = [{"role": "system", "content": "Your name is Tom and give answers in 2 lines"}] #expectations/format
+
+# Customizing the output voice: getting voices, rate, and volume
+voices = engine.getProperty('voices') 
+rate = engine.getProperty('rate')
+volume = engine.getProperty('volume')
+
+engine.setProperty('rate', 120) # talk at 120 words per minute
+engine.setProperty('volume', volume) #setting up volume
+engine.setProperty('voice', 'british') #setting up the voice
+
+
+RELAY_GPIO_PIN = 18 # define relay GPIO pin #
+
+h = lgpio.gpiochip_open(4) # initializing GPIO
+
+lgpio.gpio_claim_output(h, RELAY_GPIO_PIN) #setting up GPIO as OUTPUT
+
+def get_response(user_input):
+    messages.append({"role": "user", "content": user_input}) # parameter "user_input" because it needs user input to give  a response
+    response = openai.ChatCompletion.create( #getting the answer for the response
+        model="gpt-3.5-turbo", #telling which model
+        messages=messages
+    )
+    ChatGPT_reply = response["choices"][0]["message"]["content"] #format for giving answers
+    messages.append({"role": "assistant", "content": ChatGPT_reply}) #also format
+    return ChatGPT_reply # the thing that the function gives back
+
+def turn_on_light():
+    lgpio.gpio_write(h, RELAY_GPIO_PIN, 1) # makes RELAY_GPIO_PIN (18) 1, or HIGH (on)
+    print("Light turned ON") # printing message of affirmation
+    engine.say("Light turned on") # saying the message
+    engine.runAndWait()
+
+def turn_off_light():
+    lgpio.gpio_write(h, RELAY_GPIO_PIN, 0) # makes RELAY_GPIO_PIN (18) 0, or LOW (off)
+    print("Light turned OFF") #printing message of affirmation
+    engine.say("Light turned off") # saying the message
+    engine.runAndWait()
+
+
+
+while listening: #listening was turned ON at the start of program
+    with sr.Microphone() as source: #it listens from microphone & transcribes
+        recognizer = sr.Recognizer() #recognizing the words
+        recognizer.adjust_for_ambient_noise(source) #prevent ambient noise from clouding out the said words
+        recognizer.dynamic_energy_threshold = 3000 #adjustment mechanism to detect speech
+
+        try:
+            print("Listening...") #response
+            audio = recognizer.listen(source, timeout=5.0) #putting a timeout for the audio
+            response = recognizer.recognize_google(audio) # response
+            print(response) #printing the response
+
+            if "tom question" in response.lower(): #THIS causes it to use the API key and ask AI for the answer        
+                response_from_openai = get_response(response) #get the response
+                engine.setProperty('rate', 120) # talk at 120 words per minute
+                engine.setProperty('volume', volume) #setting up volume
+                engine.setProperty('voice', 'british') #setting up the voice
+                engine.say(response_from_openai) # say the response from openai
+                engine.runAndWait() # run this and wait
+            
+            elif "tom turn on the light" in response.lower():
+                turn_on_light()
+
+            elif "tom turn off the light" in response.lower():
+                turn_off_light() 
+                #engine.say("Light turned off.")
+
+            else:
+                print("Didn't recognize any built-in commands")
+
+                engine.say("Did not recognize built-in commands.")
+
+        except sr.UnknownValueError:
+            print("Didn't recognize anything.")
+            engine.say("Did not recognize anything.")
+
+
 
 
 # Clean up GPIO on exit
