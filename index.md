@@ -1,14 +1,5 @@
 # Voice Assistant with AI
-
-<!---
-
-<span style="background-color:blue">
-
-<!--- You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions: -->
-
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-
+---
 This voice assistant, dubbed Tom, serves uncertainty and assists with tasks such as turning off the lights. He answers intrusive questions with humor and entertainment through OpenAI and responds to words and statements that people make, which is similar to Siri or Alexa. 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -43,7 +34,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 ## Description
 
-For my third milestone, I added a speaker to my project and added to my program, using the dependency pyttsx3 (referred to as "engine" in the code) to respond to a question, statement, or command (reference appendix Milestone 3 Code). If the raspberry pi detects the word "Tom", it starts to search up the question or statement on OpenAI through the API key that was stated at the beginning of the code and shares OpenAI's response. When the light is turned on or off by one's voice command, it will affirm that the light has been turned on or off if the light has been successfully turned on or off. I set up Tom's voice as well as some properties of it. 
+For my third milestone, I added a speaker to my project and added to my program, using the dependency pyttsx3 (referred to as "engine" in the code) to respond to a question, statement, or command (reference appendix Milestone 3 Code). If the raspberry pi detects the word "Tom", it starts to search up the question or statement on OpenAI through the API key that was stated at the beginning of the code and shares OpenAI's response. When the light is turned on or off by one's voice command, it will affirm that the light has been turned on or off if the light has been successfully turned on or off. I set up Tom's voice as well as some properties of it such as volume, accent or voice in general, and rate at which it speaks. 
 
 ## Challenges
 
