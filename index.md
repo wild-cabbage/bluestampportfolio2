@@ -174,11 +174,6 @@ I chose my starter project to be a jitterbug, which entailed soldering several p
 
 The jitterbug starter kit did not come with paper instructions, and the online instructions were rather unclear, so I looked at the picture and attempted to fit together the pieces how it was shown in the picture. I eventually figured it out by looking at the image more closely and stripping the wires. The vibration motor had two wires that needed to be soldered, but they were too thin to strip properly, and they did not fit properly like shown in the picture. I stripped the first one incorrectly and had to have the vibration motor replaced with another vibration motor that did end up fitting properly on the designated area, and I stripped it correctly and soldered it onto the board. These issues indirectly addressed and solved each other because of how all of the parts of the jitterbug are related to each other and how the placements affect each other.
 
-![annotatedjitterbug](jitterbugpicannotated.png)
-
-**Fig 2:** the yellow circle shows the vibration motor, allows the jitterbug to "jitter", and the red and blue wires are extremely thin--unable to be stripped with a traditional wire stripper*
-
-
 
 ## Next Steps
 
