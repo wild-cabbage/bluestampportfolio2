@@ -625,10 +625,13 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Servo | To act as a door | $6.99 for 3 | <a href="https://www.amazon.com/WWZMDiB-SG90-Control-Servos-Arduino/dp/B0BKPL2Y21/ref=sr_1_2_sspa?crid=HJSY3X06MTGE&dib=eyJ2IjoiMSJ9.0h1Mppk0fZ01In-hB99ublTEvDCkMLf9fczkT8tcjS5KWPv1eOuAzkjG8q238K4QftxeJOCivqCbHQ4w4xel8QwIBsfVqVYaAQte8TrBokQWh17xwcOs63gdyjHDmHX4tdG7JhO_EpaeGy9q6TzuAlzv1rbrSfYUK7daV35uK7jbwoVH8tkZ5TtUpENNLGETtkw_TwUS4DrKZ2LUecHArR7X23J8wnsx0ARYElJRn6Zrc2sXOGc-v3Kr_fjutmfoYd9SfD-KlYm-qTjD-bbrsxHe1iHMa2GH7mL-CwlBc3o.1cJJ-6OBQWUGNFMDWWZW_vl6_8EMKdkjOgNyUbvn8Oc&dib_tag=se&keywords=servo&qid=1751557689&sprefix=serv%2Caps%2C408&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"> Link </a> |
 
 
-<!--- # Other Resources/Examples
-<!--- One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components. -->
+<!--- 
+# Other Resources/Examples
+One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components. -->
 - [Example 1](https://pyttsx3.readthedocs.io/en/latest/)
 - [Example 2](https://learntosolderkits.com/pages/instructions)
 - [Example 3](https://sites.google.com/bluestampengineering.com/2025projectbook/level-200)
 
-To watch the BSE tutorial on how to create a portfolio, click here. --> 
+To watch the BSE tutorial on how to create a portfolio, click here.
+
+-->
