@@ -50,7 +50,7 @@ For my third milestone, I added a speaker to my project and added to my program,
 The main challenge at this steps was that my speaker was not outputting any sound at first, so I assumed that the code was wrong. However, I tried just running the function ```pyttsx3.say("hi")```, and it was still not working. I created the following test code to see if the speaker was actually attempting to say something but I just could not hear, and it always printed "working" in the terminal. 
 
   ```python
-##these two lines were to check whether or not the speaker was trying to say something
+# these two lines were to check whether or not the speaker was trying to say something
   if engine.isBusy(): 
     print("working")
 ```
