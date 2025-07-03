@@ -20,7 +20,11 @@ This voice assistant, dubbed Tom, serves uncertainty and assists with tasks such
 
 ## Modification 1
 
+---
+
 ### Description
+
+---
 
 My first modification was to put all commands including "turn on the light" and "turn off the light" under Tom so that it feels less invasive, and the voice assistant does not seem like it is constantly listening. Since I put "turn on the light" and "turn off the light" under Tom, when the voice assistant was supposed to connect to OpenAI, I added another keyword in addition to "Tom"--"question"--to clarify that it is not turning the light on or off (reference [Modification 1 Code](###Modification-1-code)). 
 
@@ -44,10 +48,14 @@ Before, instead of "Tom, question" for the voice assistant to connect with OpenA
 
 ### Next Steps
 
+---
+
 Next, I will be starting on another modification--allowing the voice assistant to move a servo to "open the door" or "close the door". 
 
   
 # Final Milestone
+
+---
 
 <!--- 
 
@@ -64,9 +72,13 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 ## Description
 
+---
+
 For my third milestone, I added a speaker to my project and added to my program, using the dependency pyttsx3 (referred to as "engine" in the code) to respond to a question, statement, or command (reference appendix [Milestone 3 Code](###Milestone-3-Code)). If the raspberry pi detects the word "Tom", it starts to search up the question or statement on OpenAI through the API key that was stated at the beginning of the code and shares OpenAI's response. When the light is turned on or off by one's voice command, it will affirm that the light has been turned on or off if the light has been successfully turned on or off. I set up Tom's voice as well as some properties of it such as volume, accent or voice in general, and rate at which it speaks. 
 
 ## Challenges
+
+---
 
 The main challenge at this steps was that my speaker was not outputting any sound at first, so I assumed that the code was wrong. However, I tried just running the function ```pyttsx3.say("hi")```, and it was still not working. I created the following test code to see if the speaker was actually attempting to say something but I just could not hear, and it always printed "working" in the terminal. 
 
@@ -79,17 +91,23 @@ I started thinking that it was less of the program's problem and more of the spe
 
 ## Next Steps
 
+---
+
 Next, I will be starting on my modifications, which are attaching a servo to act as a door, sharing news, playing music, and always saying 'Tom' for the voice assistant to respond instead of only to prompt OpenAI. 
 
 <!--- edit this later as needed --> 
 
 ## Progress at Bluestamp
 
+---
+
 At Bluestamp, I learned more about how breadboards work and about choosing a particular resistor using Ohm's law, V = I*R, as well as how to code a raspberry pi and configure the terminals on Mac and on SSH. My greatest triumphs were figuring out the WiFi problems that came each time I went to a different place because I could sometimes reach myself but could not connect to SSH or I could not reach myself in any way despite being on the same WiFi network. Most of the time, I had to reconnect WiFi and then try, but a few times that did not work either because the WiFi network that I used was no longer in range or had been turned off and the raspberry pi defaulted to the school network. The most formidable challenge was also related to the WiFi problems, especially surrounding how the school WiFi had several modems of the same WiFi, and my computer connected to a different modem than the raspberry pi did, so a WiFi with only one router was set up, and I used that one. 
 
 After Bluestamp, I would like to learn more about breadboards and circuits, and I would like to build onto my newly formed knowledge of coding a raspberry pi in python. I would like to thank Vrinda, Ben, Kevin, and Sophia for their assistance during my project. 
 
 # Second Milestone
+
+---
 
 <!---
 
@@ -105,6 +123,8 @@ For your second milestone, explain what you've worked on since your previous mil
 
 ## Description
 
+---
+
 My second milestone was to build the circuit (reference appendix [Schematic](###Schematic-(milestone-2)))and code the raspberry pi using python so that it could recognize words and follow commands to turn a light on and off (reference appendix [Milestone 2 Code](###milestone-2-code)). By using a relay, an electrically powered switch that uses an electromagnet to physically move a switch, I was able to turn the LED on and off. The signal wire (orange in the  picture) is connected to GPIO pin 18, the ground wire (white/gray in the picture) is connected to ground, and the voltage wire (green in the picture) is connected to 5V power. The positive side (+ve; blue wire in the picture) is connected to normally opened (NO) in the relay, and the ground is connected to common terminal (COM). The python code uses this information and writes one (on) or zero (off) to GPIO pin 18, which is where the signal wire is connected. 
 
 ![fullcircuitsetup](finalsetup.png)
@@ -114,16 +134,21 @@ My second milestone was to build the circuit (reference appendix [Schematic](###
 
 ## Challenges
 
+---
+
 During this milestone, at first, the light was not turning on when I tested it with the entire code but did turn on when I tested it without the relay. Initially, I created another program that would only test the relay and the LED, but the light still did not turn on and off (reference appendix [Relay Testing Code (milestone 2)](###relay-testing-code-(milestone-2))). I switched out the signal wire (IN1; orange in the picture) with another signal wire because that is the wire that is connected to GPIO pin 18 and that sends the signal to turn the LED on, yet that did not cause the LED to turn on and off. I checked my wiring, and there did not seem to be a problem with it, but I still tried writing both one and zero to figure out whether or not the schematic I was following switched NO and normally closed (NC). I switched out the relay, assuming that the relay had to be broken, and I was correct, but as I was running the program, I figured out that the schematic did in fact switch NO and NC, causing code that would technically turn the LED off to turn on and vice versa. 
 
 Additionally, the WiFi was problematic, especially after I filmed a part of my milestone video and returned. I could not ping my raspberry pi in terminal, so I intended to use OBS (a software that I use to change the WiFi on the raspberry pi because it does not use VNC or SSH) to check the WiFi network that my raspberry pi was on. However, OBS did not recognize my raspberry pi as a device when I plugged it in initially. Upon restarting OBS and plugging in my raspberry pi again, OBS was able to recognize my raspberry pi, and I was correct--the raspberry pi had connected to another network because I was too far from the router I had used when I was working. 
 
 ## Next Steps
 
+---
+
 My third milestone will be allowing my raspberry pi to obtain answers from AI using the OpenAI API key that I obtained for part of my  first milestone and give verbal messages of affirmation that it turned the light on and off. 
 
----
 # First Milestone
+
+---
 
 <!---
 
@@ -141,46 +166,52 @@ For your first milestone, describe what your project is and how you plan to buil
 
 ## Description
 
+---
+
 My first milestone was to obtain the OpenAI API key and to set up the raspberry pi to use and interface with it as a computer. I chose this project because it was very different from last year--more focused on software than hardware and using raspberry pi instead of Arduino--and because I wanted to learn about interacting with AI. Virtual Network Computing (VNC), Secure Shell (SSH), and Visual Studio Code (VS Code) were used to create a headless setup. I imaged the raspberry pi, renamed the it, created a host name to connect to it, used a rasperry pi camera (or pi camera) to take photos (reference [Raspberry pi imager code (milestone 1)](###Raspberry-pi-imager-code-(milestone-1))), and downloaded updates and upgrades into the terminals of Visual Studio Code and the raspberry pi.
 
 ## Components and Software
+
+---
 
 For hardware, I used the raspberry pi, a keyboard and mouse, an SD card, and an SD card reader. I downloaded a raspberry pi imager in order to image the SD card of the raspberry pi and create a host name that would later be used in Visual Studio Code to connect to the raspberry pi. For displays, I used OBS, which displays the raspberry pi screen and TigerVNC Viewer, which allows the computer's keyboard and trackpad to be used instead and allows use of the raspberry pi without plugging in the SD card reader to the computer. I downloaded Visual Studio Code to code in python as well as updates and upgrades into the terminal of VS Code. 
 
 ### Images
 
+---
+
 note: I did not have permission to show this person's face, so I put a purple square over it.
 
-<br>
-
 ![raspberrypiimage](censoredimage.png)
-
-<br>
-
 **Fig 1**: this is an image that I took with the raspberry pi camera
 
 <br>
 
 
 ![raspberrypissetup](rasppisetup.png)
-
-<br>
-
 **Fig 2**: raspberry pi setup with the raspberry pi camera
 
 ## Challenges
+
+---
 
 When I was first imaging the raspberry pi's SD card, I forgot that the imager only imaged the SD card, so I imaged it twice by accident. Halfway through the second time, I remembered that it was only supposed to image the SD card, and the imager seemed to be frozen at 100% in the verify stage. Upon pressing the "cancel" on the screen, I corrupted the SD card, and when I received a new SD card, I almost corrupted that one too because the imager was frozen at 100% verify from the start. After thirteen minutes of waiting, the imager finally finished imaging the second SD card, allowing me to take it out and use it. Visual Studio Code needed updating after I started it up for the second time after a few days, and that prevented me from filming my milestone video sooner. My raspberry pi camera was not working at first even after I plugged it in twice, and I only realized after plugging it in again that I had not plugged it in deep enough and that I had to push it a little more even with the possibility of it breaking.
 
 ### Next Steps
 
+---
+
 I will be starting on my second milestone, which allows one to interact with the voice assistant and allow it to do things (like open lights or doors), and I will build my circuit and start coding. 
 
 # Starter Project
 
+---
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/f6nY_RwNvRg?si=etzqtukCnwUdpPpv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Description
+
+---
 
 I chose my starter project to be a jitterbug, which entailed soldering several parts onto the board because I had done the RGB slider the previous year and thought that this project would be a decent balance between difficulty (e.g. soldering and applications of soldering) and time consumption. The main components were the board, which was shaped like a bug, metal wire as the "legs" of the jitterbug, two red LEDs as the eyes, a switch, and a vibration motor, which causes the entire jitterbug to vibrate, or "jitter". The 5V nickel battery powers the LEDs and the vibration motor when the switch is turned on or flicked to the right.
 
@@ -190,10 +221,14 @@ I chose my starter project to be a jitterbug, which entailed soldering several p
  
 ## Challenges
 
+---
+
 The jitterbug starter kit did not come with paper instructions, and the online instructions were rather unclear, so I looked at the picture and attempted to fit together the pieces how it was shown in the picture. I eventually figured it out by looking at the image more closely and stripping the wires. The vibration motor had two wires that needed to be soldered, but they were too thin to strip properly, and they did not fit properly like shown in the picture. I stripped the first one incorrectly and had to have the vibration motor replaced with another vibration motor that did end up fitting properly on the designated area, and I stripped it correctly and soldered it onto the board. These issues indirectly addressed and solved each other because of how all of the parts of the jitterbug are related to each other and how the placements affect each other.
 
 
 ## Next Steps
+
+---
 
 After finishing the starter project and reviewing soldering, I will have started my intensive project, and my first milestone is setting up my raspberry pi and obtaining an OpenAI API key. 
 
