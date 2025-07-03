@@ -78,7 +78,15 @@ My second modification was to add a servo to act as a door--when the servo moves
 
 ---
 
-This modification entailed many challenges, especially around finding the correct servo code to use. From researching online, I originally chose a code that used the RPi.GPIO library, and it worked; however, when I moved that code into the voice assistant code, there were errors. I later found out that the errors occurred because RPi.GPIO *references* lgpio, a library that I used for my voice assistant code, so I tried converting all of my servo code to lgpio. All the functions instantly became more complex and more importantly, the code did not end up working. I started looking toward other libraries, like gpiozero, specifically the Servo and AngularServo libraries, but the servos ended up jittering and not moving the full way.
+This modification entailed many challenges, especially around finding the correct servo code to use. From researching online, I originally chose a code that used the RPi.GPIO library, and it worked; however, when I moved that code into the voice assistant code, there were errors. I later found out that the errors occurred because RPi.GPIO *references* lgpio, a library that I used for my voice assistant code, so I tried converting all of my servo code to lgpio. All the functions instantly became more complex and more importantly, the code did not end up working. I started looking toward other libraries, like gpiozero, specifically the Servo and AngularServo libraries (reference Appendix AngularServo Code and AngularServo and PiGPIO Code), but the servos ended up jittering and not moving the full way. I then started using code with pulse width modulation code (PWM) (reference Appendix PWM Code), but it was still jittering and not moving the entire way. 
+
+I learned that GPIO pin 21 does not do PWM, so I plugged in the signal wire of the servo into GPIO pin 17 instead. Additionally, since the raspberry pi's power is already being used by the LED, I connected an external power source, yet that did not work at first because the ground rails on the breadboard may have had discrepancies. I connected the two ground rails together and used both PWM and PiGPIO to create a new servo code (reference Appendix Final Servo Code). 
+
+### Next Steps
+
+---
+
+If I had or have more time in the future to work on this project, I would have my voice assistant play music and I would change its voice to something that sounds more human.
 
   
 # Final Milestone
