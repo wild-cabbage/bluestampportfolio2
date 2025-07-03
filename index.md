@@ -189,6 +189,7 @@ note: I did not have permission to show this person's face, so I put a purple sq
 
 
 ![raspberrypissetup](rasppisetup.png)
+<br>
 **Fig 2**: raspberry pi setup with the raspberry pi camera
 
 ## Challenges
