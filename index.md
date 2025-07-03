@@ -20,8 +20,6 @@ This voice assistant, dubbed Tom, serves uncertainty and assists with tasks such
 
 ## Modification 1
 
----
-
 ### Description
 
 My first modification was to put all commands including "turn on the light" and "turn off the light" under Tom so that it feels less invasive, and the voice assistant does not seem like it is constantly listening. Since I put "turn on the light" and "turn off the light" under Tom, when the voice assistant was supposed to connect to OpenAI, I added another keyword in addition to "Tom"--"question"--to clarify that it is not turning the light on or off (reference [Modification 1 Code](###Modification-1-code)). 
@@ -50,8 +48,6 @@ Next, I will be starting on another modification--allowing the voice assistant t
 
   
 # Final Milestone
-
----
 
 <!--- 
 
@@ -95,8 +91,6 @@ After Bluestamp, I would like to learn more about breadboards and circuits, and 
 
 # Second Milestone
 
----
-
 <!---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -131,8 +125,6 @@ My third milestone will be allowing my raspberry pi to obtain answers from AI us
 ---
 # First Milestone
 
----
-
 <!---
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
@@ -156,8 +148,6 @@ My first milestone was to obtain the OpenAI API key and to set up the raspberry 
 For hardware, I used the raspberry pi, a keyboard and mouse, an SD card, and an SD card reader. I downloaded a raspberry pi imager in order to image the SD card of the raspberry pi and create a host name that would later be used in Visual Studio Code to connect to the raspberry pi. For displays, I used OBS, which displays the raspberry pi screen and TigerVNC Viewer, which allows the computer's keyboard and trackpad to be used instead and allows use of the raspberry pi without plugging in the SD card reader to the computer. I downloaded Visual Studio Code to code in python as well as updates and upgrades into the terminal of VS Code. 
 
 ### Images
-
----
 
 note: I did not have permission to show this person's face, so I put a purple square over it.
 
@@ -187,8 +177,6 @@ When I was first imaging the raspberry pi's SD card, I forgot that the imager on
 I will be starting on my second milestone, which allows one to interact with the voice assistant and allow it to do things (like open lights or doors), and I will build my circuit and start coding. 
 
 # Starter Project
-
----
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/f6nY_RwNvRg?si=etzqtukCnwUdpPpv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
