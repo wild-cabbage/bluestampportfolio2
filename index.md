@@ -64,6 +64,15 @@ Before, instead of "Tom, question" for the voice assistant to connect with OpenA
 
 Next, I will be starting on another modification--allowing the voice assistant to move a servo to "open the door" or "close the door". 
 
+
+## Modification 2
+
+### Description
+
+---
+
+My second modification was to add a servo to act as a door--when the servo moves 90 degrees, the "door" opens, and when the servo moves to 0 degrees, the "door" closes. The main command to open the door is "Tom, open the door", and the main command to close the door is "Tom, close the door". The servo uses an external power source with a battery holder and four AA batteries instead of the raspberry pi's power source because the LED is already drawing power from it (reference [Schematic (modification 2)](###Schematic-(modification-2)) . The servo has an attachment to make it more clear that it is turning instead of relying on the gears inside or looking at the top of it too closely. 
+
   
 # Final Milestone
 
@@ -251,7 +260,7 @@ After finishing the starter project and reviewing soldering, I will have started
 <br>
 Fig 5: the schematic for the circuit with an LED, a 220 ohm resistor, a relay, and a raspberry pi
 
----
+### Schematic (modification 2)
 
 ### Raspberry pi imager code (milestone 1)
 
