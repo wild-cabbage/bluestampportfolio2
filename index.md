@@ -1,4 +1,5 @@
 # Voice Assistant with AI
+
 ---
 This voice assistant, dubbed Tom, serves uncertainty and assists with tasks such as turning off the lights. He answers intrusive questions with humor and entertainment through OpenAI and responds to words and statements that people make, which is similar to Siri or Alexa. 
 
@@ -18,6 +19,7 @@ This voice assistant, dubbed Tom, serves uncertainty and assists with tasks such
 # Modifications
 
 ## Modification 1
+
 ---
 
 ### Description
@@ -48,6 +50,8 @@ Next, I will be starting on another modification--allowing the voice assistant t
 
   
 # Final Milestone
+
+---
 
 <!--- 
 
@@ -91,6 +95,8 @@ After Bluestamp, I would like to learn more about breadboards and circuits, and 
 
 # Second Milestone
 
+---
+
 <!---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -124,6 +130,8 @@ My third milestone will be allowing my raspberry pi to obtain answers from AI us
 
 ---
 # First Milestone
+
+---
 
 <!---
 
