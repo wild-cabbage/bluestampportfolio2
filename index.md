@@ -73,6 +73,13 @@ Next, I will be starting on another modification--allowing the voice assistant t
 
 My second modification was to add a servo to act as a door--when the servo moves 90 degrees, the "door" opens, and when the servo moves to 0 degrees, the "door" closes. The main command to open the door is "Tom, open the door", and the main command to close the door is "Tom, close the door". The servo uses an external power source with a battery holder and four AA batteries instead of the raspberry pi's power source because the LED is already drawing power from it (reference [Schematic (modification 2)](###Schematic-(modification-2)) . The servo has an attachment to make it more clear that it is turning instead of relying on the gears inside or looking at the top of it too closely. 
 
+
+### Challenges
+
+---
+
+This modification entailed many challenges, especially around finding the correct servo code to use. From researching online, I originally chose a code that used the RPi.GPIO library, and it worked; however, when I moved that code into the voice assistant code, there were errors. I later found out that the errors occurred because RPi.GPIO *references* lgpio, a library that I used for my voice assistant code, so I tried converting all of my servo code to lgpio. All the functions instantly became more complex and more importantly, the code did not end up working. I started looking toward other libraries, like gpiozero, specifically the Servo and AngularServo libraries, but the servos ended up jittering and not moving the full way.
+
   
 # Final Milestone
 
@@ -593,9 +600,155 @@ lgpio.gpiochip_close(h)
 print("GPIO cleanup completed")
 ```
 
-### Appendix B: Charts and Graphs
+### Servo Code
 
-**Raspberry pi GPIO pin diagram**
+**Final Servo Code**
+```python
+import time
+import pigpio
+
+# Replace with your GPIO pin number
+servo_pin = 17
+
+# Connect to pigpio daemon
+pi = pigpio.pi()
+
+# Set servo frequency (e.g., 50Hz for many servos)
+pi.set_PWM_frequency(servo_pin, 50)
+
+# Function to move servo to a specific angle (0-180 degrees)
+def set_servo_angle(angle):
+    pulse_width = int(500 + (angle / 180) * 2000)  # Calculate pulse width
+    pi.set_servo_pulsewidth(servo_pin, pulse_width)
+    print(pulse_width)
+
+# Example usage:
+set_servo_angle(90)  # Move to the middle
+time.sleep(1)
+set_servo_angle(0)   # Move to the minimum
+time.sleep(1)
+set_servo_angle(180)  # Move to the maximum
+time.sleep(1)
+set_servo_angle(90)  # Return to the middle
+
+
+
+# Clean up:
+pi.set_PWM_dutycycle(servo_pin, 0)
+pi.stop()
+```
+
+**AngularServo Code**
+```python
+from gpiozero import AngularServo 
+from time import sleep
+
+servo = AngularServo(21)
+servo.angle = -90
+sleep(1)
+servo.angle =  #set to middle position
+sleep(1) 
+servo.max() #set to maximum position
+servo.detach() #release control
+```
+**PiGPIO Code**
+```python
+from gpiozero.pins.pigpio import PiGPIOFactory
+from gpiozero import Device, AngularServo
+from time import sleep
+
+Device.pin_factory = PiGPIOFactory()
+
+servo = AngularServo(17)
+
+
+servo.angle = -90 # set to minimum position
+sleep(1)
+#servo.angle = 0 #set to middle position
+sleep(1) 
+servo.angle = 90 #set to maximum position
+servo.detach() #release control
+```
+This is the second code using AngularServo and PiGPIO to help reduce jitter
+```python
+# from gpiozero import AngularServo
+# from time import sleep
+# from gpiozero.pins.pigpio import PiGPIOFactory
+# from gpiozero import Device
+
+# Device.pin_factory = PiGPIOFactory()
+
+# servo = AngularServo(21)
+
+# try:
+#     while True:
+#         servo.angle = -90
+#         sleep(1)
+#         servo.angle = -45
+#         sleep(1)
+#         servo.mid()
+#         sleep(1)
+#         servo.angle = 45
+#         sleep(1)
+#         servo.angle = 90
+#         sleep(1)
+
+# except KeyboardInterrupt:
+#     print("program stopped")
+
+# finally:
+#     servo.close()
+```
+
+**PWM Code using Duty Cycles**
+```python
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(17, GPIO.OUT)
+p = GPIO.PWM(17, 50)
+p.start(5)
+try:
+    while True:
+        p.ChangeDutyCycle(2.5)
+        time.sleep(2)
+        p.ChangeDutyCycle(11.5)
+        time.sleep(2)
+        p.ChangeDutyCycle(20.5)
+        time.sleep(2)
+
+except KeyboardInterrupt:
+        GPIO.cleanup()
+
+import RPi.GPIO as GPIO
+from time import sleep
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(21, GPIO.OUT)
+
+p21 = GPIO.PWM(21,50)
+dc = 95
+p21.start(dc)
+
+
+print("hi")
+try:
+    while True:
+        p21.ChangeDutyCycle(5)
+        sleep(1)
+        p21.ChangeDutyCycle(10)
+
+except KeyboardInterrupt:
+    p21.stop()
+    GPIO.cleanup()
+    print("later")
+```
+
+
+
+## Appendix B: Charts and Graphs
+
+### Raspberry pi GPIO pin diagram
 <img src="raspberrypigpiopindiagram.png" alt="Raspberry pi GPIO pin diagram" width = "870.88" height = "500">
 <p align="center">Fig 6: shows the GPIO pin diagram--signal wires go into the GPIO pins; voltage wires go into the 5V or 3.3V pins; ground wires go into the ground pins</p>
 
@@ -603,7 +756,7 @@ print("GPIO cleanup completed")
 
 image source: https://learn.sparkfun.com/tutorials/introduction-to-the-raspberry-pi-gpio-and-physical-computing/gpio-pins-overview
 
-**Breadboard connection diagram**
+### Breadboard connection diagram
 
 <img src="breadboardconnection.png" alt="Breadboard connection diagram" width="816" height = "300">
 <p align = center"> Fig 7: shows the breadboard rows or columns that are connected; the sides are ground and power rails</p>
