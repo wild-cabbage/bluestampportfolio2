@@ -669,35 +669,35 @@ sleep(1)
 servo.angle = 90 #set to maximum position
 servo.detach() #release control
 ```
-This is the second code using AngularServo and PiGPIO to help reduce jitter
+**AngularServo and PiGPIO Code**
 ```python
-# from gpiozero import AngularServo
-# from time import sleep
-# from gpiozero.pins.pigpio import PiGPIOFactory
-# from gpiozero import Device
+ from gpiozero import AngularServo
+ from time import sleep
+ from gpiozero.pins.pigpio import PiGPIOFactory
+ from gpiozero import Device
 
-# Device.pin_factory = PiGPIOFactory()
+ Device.pin_factory = PiGPIOFactory()
 
-# servo = AngularServo(21)
+ servo = AngularServo(21)
 
-# try:
-#     while True:
-#         servo.angle = -90
-#         sleep(1)
-#         servo.angle = -45
-#         sleep(1)
-#         servo.mid()
-#         sleep(1)
-#         servo.angle = 45
-#         sleep(1)
-#         servo.angle = 90
-#         sleep(1)
+ try:
+     while True:
+         servo.angle = -90
+         sleep(1)
+         servo.angle = -45
+         sleep(1)
+         servo.mid()
+         sleep(1)
+         servo.angle = 45
+         sleep(1)
+         servo.angle = 90
+         sleep(1)
 
-# except KeyboardInterrupt:
-#     print("program stopped")
+ except KeyboardInterrupt:
+     print("program stopped")
 
-# finally:
-#     servo.close()
+ finally:
+     servo.close()
 ```
 
 **PWM Code using Duty Cycles**
