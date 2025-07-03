@@ -578,16 +578,20 @@ print("GPIO cleanup completed")
 ### Appendix B: Charts and Graphs
 
 **Raspberry pi GPIO pin diagram**
-<img src="raspberrypigpiopindiagram" alt="Raspberry pi GPIO pin diagram" width = "870.88" height = "500">
+<img src="raspberrypigpiopindiagram.png" alt="Raspberry pi GPIO pin diagram" width = "870.88" height = "500">
 <p align="center">Fig 1: shows the GPIO pin diagram--signal wires go into the GPIO pins; voltage wires go into the 5V or 3.3V pins; ground wires go into the ground pins</p>
+
 ---
+
 image source: https://learn.sparkfun.com/tutorials/introduction-to-the-raspberry-pi-gpio-and-physical-computing/gpio-pins-overview
 
 **Breadboard connection diagram**
 
 <img src="breadboardconnection.png" alt="Breadboard connection diagram" width="816" height = "300">
 <p align = center"> Fig 2: shows the breadboard rows or columns that are connected; the sides are ground and power rails</p>
+
 ---
+
 image source: https://openlab.citytech.cuny.edu/emtlabs/breadboard/
 
 
