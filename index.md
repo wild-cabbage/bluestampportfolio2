@@ -34,7 +34,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 ## Description
 
-For my third milestone, I added a speaker to my project and added to my program, using the dependency pyttsx3 (referred to as "engine" in the code) to respond to a question, statement, or command (reference appendix Milestone 3 Code). If the raspberry pi detects the word "Tom", it starts to search up the question or statement on OpenAI through the API key that was stated at the beginning of the code and shares OpenAI's response. When the light is turned on or off by one's voice command, it will affirm that the light has been turned on or off if the light has been successfully turned on or off. I set up Tom's voice as well as some properties of it such as volume, accent or voice in general, and rate at which it speaks. 
+For my third milestone, I added a speaker to my project and added to my program, using the dependency pyttsx3 (referred to as "engine" in the code) to respond to a question, statement, or command (reference appendix [Milestone 3 Code](###Milestone-3-Code)). If the raspberry pi detects the word "Tom", it starts to search up the question or statement on OpenAI through the API key that was stated at the beginning of the code and shares OpenAI's response. When the light is turned on or off by one's voice command, it will affirm that the light has been turned on or off if the light has been successfully turned on or off. I set up Tom's voice as well as some properties of it such as volume, accent or voice in general, and rate at which it speaks. 
 
 ## Challenges
 
@@ -75,7 +75,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 ## Description
 
-My second milestone was to build the circuit (reference appendix Schematic)and code the raspberry pi using python so that it could recognize words and follow commands to turn a light on and off (reference appendix Milestone 2 Code). By using a relay, an electrically powered switch that uses an electromagnet to physically move a switch, I was able to turn the LED on and off. The signal wire (orange in the  picture) is connected to GPIO pin 18, the ground wire (white/gray in the picture) is connected to ground, and the voltage wire (green in the picture) is connected to 5V power. The positive side (+ve; blue wire in the picture) is connected to normally opened (NO) in the relay, and the ground is connected to common terminal (COM). The python code uses this information and writes one (on) or zero (off) to GPIO pin 18, which is where the signal wire is connected. 
+My second milestone was to build the circuit (reference appendix [Schematic](###Schematic-(milestone-2)))and code the raspberry pi using python so that it could recognize words and follow commands to turn a light on and off (reference appendix [Milestone 2 Code](###milestone-2-code)). By using a relay, an electrically powered switch that uses an electromagnet to physically move a switch, I was able to turn the LED on and off. The signal wire (orange in the  picture) is connected to GPIO pin 18, the ground wire (white/gray in the picture) is connected to ground, and the voltage wire (green in the picture) is connected to 5V power. The positive side (+ve; blue wire in the picture) is connected to normally opened (NO) in the relay, and the ground is connected to common terminal (COM). The python code uses this information and writes one (on) or zero (off) to GPIO pin 18, which is where the signal wire is connected. 
 
 ![fullcircuitsetup](finalsetup.png)
 <br>
@@ -84,7 +84,7 @@ My second milestone was to build the circuit (reference appendix Schematic)and c
 
 ## Challenges
 
-During this milestone, at first, the light was not turning on when I tested it with the entire code but did turn on when I tested it without the relay. Initially, I created another program that would only test the relay and the LED, but the light still did not turn on and off (reference appendix Relay Testing Code (milestone 2)). I switched out the signal wire (IN1; orange in the picture) with another signal wire because that is the wire that is connected to GPIO pin 18 and that sends the signal to turn the LED on, yet that did not cause the LED to turn on and off. I checked my wiring, and there did not seem to be a problem with it, but I still tried writing both one and zero to figure out whether or not the schematic I was following switched NO and normally closed (NC). I switched out the relay, assuming that the relay had to be broken, and I was correct, but as I was running the program, I figured out that the schematic did in fact switch NO and NC, causing code that would technically turn the LED off to turn on and vice versa. 
+During this milestone, at first, the light was not turning on when I tested it with the entire code but did turn on when I tested it without the relay. Initially, I created another program that would only test the relay and the LED, but the light still did not turn on and off (reference appendix [Relay Testing Code (milestone 2)](###relay-testing-code-(milestone-2))). I switched out the signal wire (IN1; orange in the picture) with another signal wire because that is the wire that is connected to GPIO pin 18 and that sends the signal to turn the LED on, yet that did not cause the LED to turn on and off. I checked my wiring, and there did not seem to be a problem with it, but I still tried writing both one and zero to figure out whether or not the schematic I was following switched NO and normally closed (NC). I switched out the relay, assuming that the relay had to be broken, and I was correct, but as I was running the program, I figured out that the schematic did in fact switch NO and NC, causing code that would technically turn the LED off to turn on and vice versa. 
 
 Additionally, the WiFi was problematic, especially after I filmed a part of my milestone video and returned. I could not ping my raspberry pi in terminal, so I intended to use OBS (a software that I use to change the WiFi on the raspberry pi because it does not use VNC or SSH) to check the WiFi network that my raspberry pi was on. However, OBS did not recognize my raspberry pi as a device when I plugged it in initially. Upon restarting OBS and plugging in my raspberry pi again, OBS was able to recognize my raspberry pi, and I was correct--the raspberry pi had connected to another network because I was too far from the router I had used when I was working. 
 
@@ -111,7 +111,7 @@ For your first milestone, describe what your project is and how you plan to buil
 
 ## Description
 
-My first milestone was to obtain the OpenAI API key and to set up the raspberry pi to use and interface with it as a computer. I chose this project because it was very different from last year--more focused on software than hardware and using raspberry pi instead of Arduino--and because I wanted to learn about interacting with AI. Virtual Network Computing (VNC), Secure Shell (SSH), and Visual Studio Code (VS Code) were used to create a headless setup. I imaged the raspberry pi, renamed the it, created a host name to connect to it, used a rasperry pi camera (or pi camera) to take photos (reference Raspberry pi imager code (milestone 1)), and downloaded updates and upgrades into the terminals of Visual Studio Code and the raspberry pi.
+My first milestone was to obtain the OpenAI API key and to set up the raspberry pi to use and interface with it as a computer. I chose this project because it was very different from last year--more focused on software than hardware and using raspberry pi instead of Arduino--and because I wanted to learn about interacting with AI. Virtual Network Computing (VNC), Secure Shell (SSH), and Visual Studio Code (VS Code) were used to create a headless setup. I imaged the raspberry pi, renamed the it, created a host name to connect to it, used a rasperry pi camera (or pi camera) to take photos (reference [Raspberry pi imager code (milestone 1)](###Raspberry-pi-imager-code-(milestone-1))), and downloaded updates and upgrades into the terminals of Visual Studio Code and the raspberry pi.
 
 ## Components and Software
 
@@ -178,7 +178,7 @@ After finishing the starter project and reviewing soldering, I will have started
 ---
 
 ### Schematic (milestone 2)
-![circuitschematic](schematicc.png)
+![circuit](schematicc.png)
 
 ---
 
@@ -420,7 +420,9 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Wires (male-male, female-male, female-female) | To build the circuit | $7.39 for 40 of each | <a href="https://www.amazon.com/ZYAMY-120PCS-Connector-Multicolor-Breadboard/dp/B0742RS6YL"> Link <a> |
 | Yellow LED | To light up and act as the light | $5.69 for 100 | <a href="https://www.amazon.com/GFORTUN-Emitting-Diffused-Electronic-Indicator/dp/B08D3SYH87/ref=sr_1_3?crid=1W67RSGLPCVJV&dib=eyJ2IjoiMSJ9.bLvzpb5Fds2c7h3EaTFvnTBDhtp3wAa_9eQs5Y_GYz78H_r9_wNGmVSAFHKYWRsj-_SKsw20bMxYov-uRntaZqvjY5g8Qo9mvyDtOrUXPKsRsFzxfw_K5CMDgnn7xkbH0Kfve5mNP593Sd9jDQdZ0lf48A0I4KTB-rCPBdwI_9sp6QLbO8CDOl-tXi6a-pHjM7aU7usEv7K8ZyVwcIHRyBZhAFg64-oxR33XPcjXW2DvDx7lG05_nsoHLcMnsfCvM44dlxkNWGi7xyGQ9krIfTtVBsomGySj2nAtxnjLbjE.fYPqHWFqdMaCmiCp_kW-1JTa-uCYNQSLbEOAA7BZ9gE&dib_tag=se&keywords=yellow%2Bpin%2BlED&qid=1751062472&s=industrial&sprefix=yellow%2Bpin%2Bled%2Cindustrial%2C158&sr=1-3&th=1"> Link <a> |
 | 220 ohm resistor | To regulate electric flow | $0.10 | <a href="https://www.addicore.com/products/220-ohm-1-4w-precision-resistor"> Link </a> |
-
+| AA batteries | External power source for the servo | $4.97 for 4 | <a href="https://www.amazon.com/Duracell-CopperTop-Batteries-All-Purpose-Household/dp/B00000JHQ6?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER&gPromoCode=sns_us_en_5_2025Q1&gQT=1"> Link </a> |
+| 4 AA battery holder | To hold AA batteries | $5.99 for 2 | <a href="https://www.amazon.com/VWEICYY-Battery-Holder-housing-Leads/dp/B0DZWK2TNY/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.xAPD8pmEPl4HcAAEkdhvHk5cnguOwSmEOYaSmAl_Av68bcYIQPtjp0P6yLHCatRiOLz5B6R20UX6i151uGs2g_j-3GnxL8QXmYb1F9oUfP_0BY0JFTgiQuXguV9WyeOsevJGBU4xl9zeCpP3YdAH5B2kuGe7ggiaxeu1f6yVB9hWq3uJF9pBs-vIOGDKezifrzUdg9oLA0aPGeyKVQjLuTGVMduMfnT0BzWu-fRXulE._st9mg_FMjbxLlxQqBJDoPdQAcIm1jA7i63MZLG3okE&dib_tag=se&keywords=4+aa+battery+holder&qid=1751557636&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"> Link </a> |
+| Servo | To act as a door | $6.99 for 3 | <a href="https://www.amazon.com/WWZMDiB-SG90-Control-Servos-Arduino/dp/B0BKPL2Y21/ref=sr_1_2_sspa?crid=HJSY3X06MTGE&dib=eyJ2IjoiMSJ9.0h1Mppk0fZ01In-hB99ublTEvDCkMLf9fczkT8tcjS5KWPv1eOuAzkjG8q238K4QftxeJOCivqCbHQ4w4xel8QwIBsfVqVYaAQte8TrBokQWh17xwcOs63gdyjHDmHX4tdG7JhO_EpaeGy9q6TzuAlzv1rbrSfYUK7daV35uK7jbwoVH8tkZ5TtUpENNLGETtkw_TwUS4DrKZ2LUecHArR7X23J8wnsx0ARYElJRn6Zrc2sXOGc-v3Kr_fjutmfoYd9SfD-KlYm-qTjD-bbrsxHe1iHMa2GH7mL-CwlBc3o.1cJJ-6OBQWUGNFMDWWZW_vl6_8EMKdkjOgNyUbvn8Oc&dib_tag=se&keywords=servo&qid=1751557689&sprefix=serv%2Caps%2C408&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"> Link </a> |
 
 
 # Other Resources/Examples
