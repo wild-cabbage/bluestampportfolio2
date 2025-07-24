@@ -160,7 +160,7 @@ My second milestone was to build the circuit (reference appendix [Schematic](###
 
 ![fullcircuitsetup](finalsetup.png)
 <br>
-**Fig 1**: the circuit that runs the voice assistant code
+Fig 1: the circuit that runs the voice assistant code
 
 
 ## Challenges
@@ -214,14 +214,14 @@ For hardware, I used the raspberry pi, a keyboard and mouse, an SD card, and an 
 note: I did not have permission to show this person's face, so I put a purple square over it.
 
 ![raspberrypiimage](censoredimage.png)
-**Fig 2**: this is an image that I took with the raspberry pi camera
+Fig 2: this is an image that I took with the raspberry pi camera
 
 <br>
 
 
 ![raspberrypissetup](rasppisetup.png)
 <br>
-**Fig 3**: raspberry pi setup with the raspberry pi camera
+Fig 3: raspberry pi setup with the raspberry pi camera
 
 ## Challenges
 
@@ -247,7 +247,7 @@ I will be starting on my second milestone, which allows one to interact with the
 
 ![jitterbug](smalljitterbugpic.png)
 
-**Fig 4:** an image of the jitterbug*
+Fig 4: an image of the jitterbug
  
 
 I chose my starter project to be a jitterbug, which entailed soldering several parts onto the board because I had done the RGB slider the previous year and thought that this project would be a decent balance between difficulty (e.g. soldering and applications of soldering) and time consumption. The main components were the board, which was shaped like a bug, metal wire as the "legs" of the jitterbug, two red LEDs as the eyes, a switch, and a vibration motor, which causes the entire jitterbug to vibrate, or "jitter". The 5V nickel battery powers the LEDs and the vibration motor when the switch is turned on or flicked to the right.
@@ -274,7 +274,7 @@ After finishing the starter project and reviewing soldering, I will have started
 
 ### Schematic (milestone 2)
 <img src="schematicbetterrendering.png" alt="Original Schematic" width = "800" height = "800">
-<br>
+
 Fig 5: the schematic for the circuit with an LED, a 220 ohm resistor, a relay, and a raspberry pi
 
 ### Schematic (modification 2)
@@ -760,7 +760,11 @@ except KeyboardInterrupt:
 
 ### Raspberry pi GPIO pin diagram
 <img src="raspberrypigpiopindiagram.png" alt="Raspberry pi GPIO pin diagram" width = "870.88" height = "500">
-<p align="center">Fig 6: shows the GPIO pin diagram--signal wires go into the GPIO pins; voltage wires go into the 5V or 3.3V pins; ground wires go into the ground pins</p>
+<p align="center"> 
+
+<br>
+    
+Fig 6: shows the GPIO pin diagram--signal wires go into the GPIO pins; voltage wires go into the 5V or 3.3V pins; ground wires go into the ground pins</p>
 
 ---
 
@@ -769,7 +773,9 @@ image source: https://learn.sparkfun.com/tutorials/introduction-to-the-raspberry
 ### Breadboard connection diagram
 
 <img src="breadboardconnection.png" alt="Breadboard connection diagram" width="816" height = "300">
-<p align = center"> Fig 7: shows the breadboard rows or columns that are connected; the sides are ground and power rails</p>
+<p align = center">
+    
+Fig 7: shows the breadboard rows or columns that are connected; the sides are ground and power rails</p>
 
 ---
 
